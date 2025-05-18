@@ -40,18 +40,16 @@ void setup();
 #if !CONFIG_AUTOSTART_ARDUINO
 void app_main()
 {
-  // initialize arduino library before we start the tasks
-  // initArduino();
-
   setup();
 }
 #endif
+
 void setup()
 {
   //  String title = "LVGL porting example";
 
   // Serial.begin(115200);
-  logSection("LVGL porting example start");
+  logSection("Sensorhub start");
   esp_chip_info_t chip_info;
   uint32_t flash_size;
   esp_chip_info(&chip_info);
@@ -101,28 +99,14 @@ void setup()
   /* Lock the mutex due to the LVGL APIs are not thread-safe */
   bsp_display_lock(0);
 
-  /**
-   * Try an example. Don't forget to uncomment header.
-   * See all the examples online: https://docs.lvgl.io/master/examples.html
-   * source codes: https://github.com/lvgl/lvgl/tree/e7f88efa5853128bf871dde335c0ca8da9eb7731/examples
-   */
-  //  lv_example_btn_1();
-
-  /**
-   * Or try out a demo.
-   * Don't forget to uncomment header and enable the demos in `lv_conf.h`. E.g. `LV_USE_DEMOS_WIDGETS`
-   */
-  // lv_demo_widgets();
   bsp_display_brightness_set(50);
-  lv_demo_benchmark();
+  // draw_main_widget();
 
- //  lv_demo_music();
-  //lv_demo_stress();
 
   /* Release the mutex */
   bsp_display_unlock();
 
-  logSection("LVGL porting example end");
+  logSection("Sensorhub end");
 }
 
 void loop()
