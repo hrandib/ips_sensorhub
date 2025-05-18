@@ -4,6 +4,7 @@
 #include "display.h"
 #include "esp_bsp.h"
 #include "lv_port.h"
+#include "sensors.h"
 #include <esp_log.h>   // Add this line to include the header file that declares ESP_LOGI
 #include <esp_flash.h> // Add this line to include the header file that declares esp_flash_t
 #include <esp_chip_info.h>
@@ -92,6 +93,7 @@ void setup()
 #endif
   };
 
+  sensors_init();
   bsp_display_start_with_config(&cfg);
   bsp_display_backlight_on();
 
