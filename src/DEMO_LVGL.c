@@ -112,10 +112,12 @@ void setup()
    * Or try out a demo.
    * Don't forget to uncomment header and enable the demos in `lv_conf.h`. E.g. `LV_USE_DEMOS_WIDGETS`
    */
-  lv_demo_widgets();
-  //     lv_demo_benchmark();
-  // lv_demo_music();
-  // lv_demo_stress();
+  // lv_demo_widgets();
+  bsp_display_brightness_set(10);
+  lv_demo_benchmark();
+
+ //  lv_demo_music();
+  //lv_demo_stress();
 
   /* Release the mutex */
   bsp_display_unlock();
