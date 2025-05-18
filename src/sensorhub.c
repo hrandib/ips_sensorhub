@@ -10,7 +10,7 @@
 #include <esp_system.h>
 #include <esp_heap_caps.h>
 
-static const char *TAG = "DEMO_LVGL";
+static const char *TAG = "SENSORHUB";
 
 #define BUILD (String(__DATE__) + " - " + String(__TIME__)).c_str()
 
@@ -113,7 +113,7 @@ void setup()
    * Don't forget to uncomment header and enable the demos in `lv_conf.h`. E.g. `LV_USE_DEMOS_WIDGETS`
    */
   // lv_demo_widgets();
-  bsp_display_brightness_set(10);
+  bsp_display_brightness_set(50);
   lv_demo_benchmark();
 
  //  lv_demo_music();
